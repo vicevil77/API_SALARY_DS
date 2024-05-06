@@ -70,8 +70,8 @@ def retrain():
 @app.route('/webhook_2024', methods=['POST'])
 def webhook():
     # Ruta al repositorio donde se realizará el pull
-    path_repo = "/home/vicevil//home/vicevil/DESPLIEGUE_API_SALARIOS"
-    servidor_web = '/var/www/vicevil_pythonanywhere_com_wsgi.py' 
+    path_repo = '/home/vicevil/DESPLIEGUE_API_SALARIOS'
+    servidor_web = '/var/www/vicevil_pythonanywhere_com_wsgi.py'
 
     # Comprueba si la solicitud POST contiene datos JSON
     if request.is_json:
