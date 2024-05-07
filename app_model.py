@@ -12,16 +12,16 @@ import subprocess
 #ejemplo en clase :  /api/v1/predict?work_year=5&experience_level=Senior&employment_type=Full-time&job_title=Software%20Engineer&salary_currency=USD&salary_in_usd=50000&employee_residence=USA&remote_ratio=0.5&company_location=USA&company_size=100-500
 # REENTRENO: /api/v1/retrain/
 
-root_path= ""
+root_path= "/home/vicevil/DESPLIEGUE_API_SALARIOS/"
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
 @app.route('/', methods=['GET'])
 def hello(): # Ligado al endopoint "/" o sea el home, con el método GET
-    return  "<h1>Bienvenido al modelo predictorio de salarios de Data Scientit: /api/v1/predit o /api/v1/retrain </h1>"
+    return  "<h1>Bienvenido al modelo predictorio de salarios de Data Scientit, usa las ext: /api/v1/predit o /api/v1/retrain </h1>"
 
-with open(r'D:\Cursos\REPOSITORIOS\Nueva carpeta\data\salary_pipeline.pkl', 'rb') as file:
+with open(r'/home/vicevil/DESPLIEGUE_API_SALARIOS/data/salary_pipeline.pkl', 'rb') as file:
     pipeline = pickle.load(file)
 
 @app.route('/api/v1/predict', methods=['GET'])
@@ -50,7 +50,7 @@ def predict():
 @app.route('/api/v1/retrain', methods=['GET'])
 def retrain():
     # leer los datos del archivo CSV
-    data = pd.read_csv(r'D:\Cursos\REPOSITORIOS\Nueva carpeta\data\ds_salaries.csv')
+    data = pd.read_csv(r'/home/vicevil/DESPLIEGUE_API_SALARIOS/data/ds_salaries.csv')
     # dividir los datos en características y variable objetivo
     X = data.drop('salary', axis=1)
     y = data['salary']
@@ -64,13 +64,13 @@ def retrain():
     rmse = np.sqrt(mean_squared_error(y_test, pipeline['model'].predict(X_test)))
     mape = mean_absolute_percentage_error(y_test, pipeline['model'].predict(X_test))
     # guardar el modelo reentrenado
-    with open(r'D:\Cursos\REPOSITORIOS\Nueva carpeta\data\retrained_model.pkl', 'wb') as file:
+    with open(r'/home/vicevil/DESPLIEGUE_API_SALARIOS/data/retrain/retrained_model.pkl', 'wb') as file:
             pickle.dump(pipeline['model'], file)
     return {'message': 'Model retrained successfully', 'RMSE': rmse, 'MAPE': mape}
 @app.route('/webhook_2024', methods=['POST'])
 def webhook():
     # Ruta al repositorio donde se realizará el pull
-    path_repo = '/home/vicevil/DESPLIEGUE_API_SALARIOS'
+    path_repo = "/home/vicevil/DESPLIEGUE_API_SALARIOS"
     servidor_web = '/var/www/vicevil_pythonanywhere_com_wsgi.py'
 
     # Comprueba si la solicitud POST contiene datos JSON
