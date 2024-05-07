@@ -8,10 +8,13 @@ from sklearn.metrics import mean_squared_error, mean_absolute_percentage_error
 import numpy as np
 import subprocess
 import logging
+ImportWarnings = logging.getLogger("py.warnings")
 
 #EJEMPLO PARA LA PRUEBA:
 #ejemplo en clase :  /api/v1/predict?work_year=5&experience_level=Senior&employment_type=Full-time&job_title=Software%20Engineer&salary_currency=USD&salary_in_usd=50000&employee_residence=USA&remote_ratio=0.5&company_location=USA&company_size=100-500
 # REENTRENO: /api/v1/retrain/
+
+#AL FIN FUNCIONA WEBHOOK
 
 root_path= "/home/vicevil/DESPLIEGUE_API_SALARIOS/"
 
