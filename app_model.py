@@ -26,7 +26,7 @@ def hello(): # Ligado al endopoint "/" o sea el home, con el método GET
     return "<style>" \
            "body { background-image: url('/static/images/fondo.jpg'); }" \
            "</style>" \
-           "<h1><b>Bienvenido al modelo predictorio de salarios de Data Scientits<b><br></h1>" \
+           "<h1><b>Enhorabuena, ha sido un placer teneros como alumnos, he aprendido mucho y espero que os sirva, más en lo humano que en lo técnico, pero de primeras en lo técnico. Y es la primera vez que lo escribo.<b><br></h1>" \
            "<br>" \
            "<h1>Puedes elegir entre las siguientes variables, poniendo en la barra de direccion las variables(COL) en el orden establecido separadas de la forma siguiente:</h1>" \
            "<h4>eliges /api/v1/predict o /api/v1/retrain + ?COL=VAL#...COL=VAL#...COL=VAL</h4>" \
