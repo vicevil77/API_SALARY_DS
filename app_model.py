@@ -16,7 +16,7 @@ import logging
 
 #AL FIN FUNCIONA WEBHOOK
 
-root_path= "/home/vicevil/DESPLIEGUE_API_SALARIOS/"
+root_path= "/home/vicevil/despliegue/DESPLIEGUE_API_SALARIOS/"
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
@@ -54,7 +54,7 @@ def hello(): # Ligado al endopoint "/" o sea el home, con el método GET
            "<h3>COL: company_size</h2>" \
            "<p>VAL: ['L' ,'S' ,'M']</p>"
 
-with open(r'/home/vicevil/DESPLIEGUE_API_SALARIOS/data/salary_pipeline.pkl', 'rb') as file:
+with open(root_path + 'data/salary_pipeline.pkl', 'rb') as file:
     pipeline = pickle.load(file)
 
 @app.route('/api/v1/predict', methods=['GET'])
@@ -83,7 +83,7 @@ def predict():
 @app.route('/api/v1/retrain', methods=['GET'])
 def retrain():
     # leer los datos del archivo CSV
-    data = pd.read_csv(r'/home/vicevil/DESPLIEGUE_API_SALARIOS/data/ds_salaries.csv')
+    data = pd.read_csv(root_path + 'data/ds_salaries.csv')
     # dividir los datos en características y variable objetivo
     X = data.drop('salary', axis=1)
     y = data['salary']
@@ -97,13 +97,13 @@ def retrain():
     rmse = np.sqrt(mean_squared_error(y_test, pipeline['model'].predict(X_test)))
     mape = mean_absolute_percentage_error(y_test, pipeline['model'].predict(X_test))
     # guardar el modelo reentrenado
-    with open(r'/home/vicevil/DESPLIEGUE_API_SALARIOS/data/retrain/retrained_model.pkl', 'wb') as file:
+    with open(root_path + 'data/retrain/retrained_model.pkl', 'wb') as file:
             pickle.dump(pipeline['model'], file)
     return {'message': 'Model retrained successfully', 'RMSE': rmse, 'MAPE': mape}
 @app.route('/webhook_2024', methods=['POST'])
 def webhook():
     # Ruta al repositorio donde se realizará el pull
-    path_repo = "/home/vicevil/DESPLIEGUE_API_SALARIOS"
+    path_repo = root_path
     servidor_web = '/var/www/vicevil_pythonanywhere_com_wsgi.py'
 
     # Comprueba si la solicitud POST contiene datos JSON
