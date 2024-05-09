@@ -4,16 +4,14 @@ jobs:
     docker:
       - image: circleci/python:3.7
     steps:
-      - checkout
+      - checkout 
+      - run: 
+          name: Instalar CMake
+          command: sudo apt-get update && sudo apt-get install cmake  
       - run:
           name: Install dependencies
           command: pip install -r requirements.txt
       - run:
           name: Run tests
           command: pytest
-
-steps:
-  - checkout # Paso de extraer el código 
-  - run: 
-      name: Instalar CMake
-      command: sudo apt-get update && sudo apt-get install cmake         
+   
