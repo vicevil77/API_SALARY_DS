@@ -1,15 +1,18 @@
-version: 2.1
-jobs:
-  build:
-    docker:
-      - image: circleci/python:3.7
-    steps:
-      - checkout
-      - run:
+version: 2.1  # Especifica la versión de CircleCI
+
+jobs:  # Define los trabajos que realiza el pipeline de CI 
+  build:  # Nombre del trabajo 
+    docker:  # Especifica el entorno de ejecución 
+      - image: circleci/python:3.7  # Imagen de base de Python 
+
+    steps:  # Pasos ejecutados en el trabajo 
+      - checkout  # Copia el código del repositorio      
+      - run: 
           name: Install dependencies
-          command: pip install -r requirements.txt
+          command: pip install -r requirements.txt  # Instala las dependencias
       - run:
           name: Run tests
-          command: pytest
+          command: pytest  # Ejecuta las pruebas 
+
 
     
