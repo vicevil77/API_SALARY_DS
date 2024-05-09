@@ -24,17 +24,14 @@ app.config['DEBUG'] = True
 @app.route('/', methods=['GET'])
 def hello(): # Ligado al endopoint "/" o sea el home, con el método GET
     return "<style>" \
-           "body {" \
-           "background-image: url('fondo.jpg');" \
-           "background-repeat: no-repeat;" \
-           "background-attachment: fixed;" \
-           "background-size: cover;" \
-           "}" \
+           "body { background-image: url('/static/images/fondo.jpg'); }" \
            "</style>" \
            "<h1><b>Bienvenido al modelo predictorio de salarios de Data Scientits<b><br></h1>" \
            "<br>" \
            "<h1>Puedes elegir entre las siguientes variables, poniendo en la barra de direccion las variables(COL) en el orden establecido separadas de la forma siguiente:</h1>" \
            "<h4>eliges /api/v1/predict o /api/v1/retrain + ?COL=VAL#...COL=VAL#...COL=VAL</h4>" \
+            "<br>" \
+            "<h2>Por ejemplo:  /api/v1/predict?work_year=5&experience_level=Senior&employment_type=Full-time&job_title=Software%20Engineer&salary_currency=USD&salary_in_usd=50000&employee_residence=USA&remote_ratio=0.5&company_location=USA&company_size=100-500</h2>" \
            "<br>" \
            "<h3>COL: work_years</h2>" \
            "<p>VAL: [2020,2021, 2022]</p>" \
