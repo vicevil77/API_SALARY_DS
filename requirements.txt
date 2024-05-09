@@ -309,7 +309,7 @@ persistent==4.9.0
 pexpect==4.8.0
 pickleshare==0.7.5
 Pillow==9.0.0
-Pint==0.19.2
+Pint<=0.18
 pipx==1.0.0
 plaster==1.0
 plaster-pastedeploy==0.7
