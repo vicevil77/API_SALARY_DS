@@ -157,7 +157,6 @@ gevent==21.12.0
 gitdb==4.0.9
 gitdb2==4.0.2
 GitPython==3.1.27
-glpk==0.4.6
 gmplot==1.4.1
 gmpy==1.17
 google-api-core==2.8.0
@@ -352,7 +351,6 @@ pyflakes3k==0.4.3
 pygal==3.0.0
 pygeoip==0.3.2
 Pygments==2.12.0
-PyGObject==3.42.1
 pyHanko==0.13.1
 pyhanko-certvalidator==0.19.5
 pyhdf==0.10.3
