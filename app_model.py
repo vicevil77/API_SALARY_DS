@@ -23,27 +23,29 @@ app.config['DEBUG'] = True
 
 @app.route('/', methods=['GET'])
 def hello(): # Ligado al endopoint "/" o sea el home, con el método GET
-    return "<h1>Bienvenido al modelo predictorio de salarios de Data Scientit, usa las ext: /api/v1/predit o /api/v1/retrain </h1>" \
+    return "<h1>Bienvenido al modelo predictorio de salarios de Data Scientit, usa las ext: /api/v1/predit o /api/v1/retrain </h1><br>" \
+            "<br>" \
            "<p>Puedes elegir entre las siguientes variables, poniendo detras primer? y despues # detras de cada una de las que quieras predecir:</p>" \
-           "<h2>COL_work_years</h2>" \
+               "<br>" \
+           "<h3>COL_work_years</h2>" \
            "<p>[2020,2021, 2022]</p>" \
-           "<h2>COL_experience_level</h2>" \
+           "<h3>COL_experience_level</h2>" \
            "<p>['MI', 'SE', 'EN' ,'EX']</p>" \
-           "<h2>COL_employment_type</h2>" \
+           "<h3>COL_employment_type</h2>" \
            "<p>['FT', 'CT' ,'PT' ,'FL']</p>" \
-           "<h2>COL_job_title</h2>" \
+           "<h3>COL_job_title</h2>" \
            "<p>['Data Scientist', 'Machine Learning Scientist', 'Big Data Engineer', 'Product Data Analyst', 'Machine Learning Engineer', 'Data Analyst', 'Lead Data Scientist', 'Business Data Analyst', 'Lead Data Engineer', 'Lead Data Analyst', 'Data Engineer', 'Data Science Consultant', 'BI Data Analyst', 'Director of Data Science', 'Research Scientist', 'Machine Learning Manager', 'Data Engineering Manager', 'Machine Learning Infrastructure Engineer', 'ML Engineer', 'AI Scientist', 'Computer Vision Engineer', 'Principal Data Scientist', 'Data Science Manager', 'Head of Data', '3D Computer Vision Researcher', 'Data Analytics Engineer', 'Applied Data Scientist', 'Marketing Data Analyst', 'Cloud Data Engineer', 'Financial Data Analyst', 'Computer Vision Software Engineer', 'Director of Data Engineering', 'Data Science Engineer', 'Principal Data Engineer', 'Machine Learning Developer', 'Applied Machine Learning Scientist', 'Data Analytics Manager', 'Head of Data Science', 'Data Specialist', 'Data Architect', 'Finance Data Analyst', 'Principal Data Analyst', 'Big Data Architect', 'Staff Data Scientist', 'Analytics Engineer', 'ETL Developer', 'Head of Machine Learning', 'NLP Engineer']</p>" \
-           "<h2>COL_salary_currency</h2>" \
+           "<h3>COL_salary_currency</h2>" \
            "<p>['EUR' ,'USD' ,'GBP', 'HUF' ,'INR' ,'JPY', 'CNY', 'MXN', 'CAD' ,'DKK' ,'PLN' ,'SGD' , 'CLP' ,'BRL' ,'TRY', 'AUD' ,'CHF']</p>" \
-           "<h2>COL_salary_in_usd</h2>" \
+           "<h3>COL_salary_in_usd</h2>" \
            "<p>[79833, 260000, 109024, 20000, 150000, 72000, 190000, 35735, 135000, 125000, 51321, 40481, 39916, 87000, 85000, 8000, 41689, 114047, 5707, 56000, 43331, 6072, 47899, 98000, 115000, 325000, 42000, 33511, 100000, 117104, 59303, 70000, 68428, 450000, 46759, 74130, 103000, 250000, 10000, 138000, 45760, 50180, 106000, 112872, 15966, 76958, 188000, 105000, 70139, 91000, 45896, 54742, 60000, 148261, 38776, 118000, 120000, 138350, 110000, 130800, 21669, 412000, 45618, 62726, 49268, 190200, 91237, 42197, 82528, 235000, 53192, 5409, 270000, 80000, 79197, 140000, 54238, 47282, 153667, 28476, 59102, 170000, 88654, 76833, 19609, 276000, 29751, 89294, 12000, 95746, 75000, 36259, 62000, 73000, 51519, 187442, 30428, 94564, 113476, 103160, 45391, 225000, 50000, 40189, 90000, 200000, 110037, 10354, 151000, 9466, 40570, 49646, 38400, 24000, 63711, 77364, 220000, 240000, 82500, 82744, 62649, 153000, 160000, 168000, 75774, 13400, 144000, 127221, 119059, 423000, 230000, 28369, 63831, 130026, 165000, 55000, 60757, 174000, 2]</p>" \
-           "<h2>COL_employee_residence</h2>" \
+           "<h3>COL_employee_residence</h2>" \
            "<p>['DE' ,'JP' ,'GB' ,'HN' ,'US', 'HU', 'NZ', 'FR', 'IN', 'PK', 'PL' ,'PT' ,'CN' ,'GR', 'AE', 'NL', 'MX', 'CA' ,'AT', 'NG', 'PH' ,'ES' ,'DK' ,'RU' ,'IT' ,'HR' ,'BG' ,'SG','BR' ,'IQ', 'VN' ,'BE' ,'UA', 'MT' ,'CL' ,'RO' ,'IR' ,'CO' ,'MD', 'KE', 'SI', 'HK','TR', 'RS', 'PR', 'LU', 'JE', 'CZ', 'AR', 'DZ', 'TN', 'MY', 'EE', 'AU', 'BO', 'IE','CH']</p>" \
-           "<h2>COL_remote_ratio</h2>" \
+           "<h3>COL_remote_ratio</h2>" \
            "<p>[ 0 ,50 ,100]</p>" \
-           "<h2>COL_company_location</h2>" \
+           "<h3>COL_company_location</h2>" \
            "<p>['DE', 'JP', 'GB', 'HN', 'US', 'HU', 'NZ', 'FR', 'IN', 'PK', 'CN', 'GR', 'AE', 'NL', 'MX', 'CA', 'AT', 'NG', 'ES', 'PT', 'DK', 'IT', 'HR', 'LU', 'PL', 'SG', 'RO', 'IQ', 'BR', 'BE', 'UA', 'IL', 'RU', 'MT', 'CL', 'IR', 'CO', 'MD', 'KE', 'SI', 'CH', 'VN', 'AS', 'TR', 'CZ', 'DZ', 'EE', 'MY', 'AU', 'IE']</p>" \
-           "<h2>COL_company_size</h2>" \
+           "<h3>COL_company_size</h2>" \
            "<p>['L' ,'S' ,'M']</p>"
 
 with open(r'/home/vicevil/DESPLIEGUE_API_SALARIOS/data/salary_pipeline.pkl', 'rb') as file:
