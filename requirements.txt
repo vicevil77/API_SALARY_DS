@@ -14,7 +14,7 @@ arviz==0.11.4
 asgiref==3.5.2
 asn1crypto==1.5.1
 astor==0.8.1
-astropy==4.3.1
+astropy==5.0.4
 asttokens==2.0.5
 astunparse==1.6.3
 async==0.6.2
@@ -87,7 +87,7 @@ Deprecated==1.2.13
 dill==0.3.4
 distlib==0.3.5
 distro==1.7.0
-Django==3.2.25
+Django==4.0.6
 django-blog-zinnia==0.20
 django-bootstrap-form==3.4
 django-classy-tags==3.0.1
@@ -157,6 +157,7 @@ gevent==21.12.0
 gitdb==4.0.9
 gitdb2==4.0.2
 GitPython==3.1.27
+glpk==0.4.6
 gmplot==1.4.1
 gmpy==1.17
 google-api-core==2.8.0
@@ -196,7 +197,7 @@ interchange==2021.0.4
 interface-meta==1.3.0
 ipykernel==6.15.1
 ipyparallel==8.3.0
-ipython==7.34.0
+ipython==8.3.0
 ipython-genutils==0.2.0
 ipywidgets==7.7.0
 isodate==0.6.1
@@ -308,7 +309,7 @@ persistent==4.9.0
 pexpect==4.8.0
 pickleshare==0.7.5
 Pillow==9.0.0
-Pint==0.18
+Pint==0.19.2
 pipx==1.0.0
 plaster==1.0
 plaster-pastedeploy==0.7
@@ -332,7 +333,7 @@ ptyprocess==0.7.0
 pudb==2022.1.1
 pure-eval==0.2.2
 py==1.11.0
-py2neo==2021.2.4
+py2neo==2021.2.3
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pybind11==2.10.0
@@ -351,6 +352,7 @@ pyflakes3k==0.4.3
 pygal==3.0.0
 pygeoip==0.3.2
 Pygments==2.12.0
+PyGObject==3.42.1
 pyHanko==0.13.1
 pyhanko-certvalidator==0.19.5
 pyhdf==0.10.3
@@ -451,7 +453,7 @@ SQLAlchemy==1.4.36
 sqlparse==0.4.2
 stack-data==0.3.0
 starlette==0.19.1
-stevedore==3.5.2
+stevedore==4.0.0
 stripe==3.0.0
 svglib==1.3.0
 sympy==1.9
@@ -467,6 +469,7 @@ tensorflow-estimator==2.9.0
 tensorflow-io-gcs-filesystem==0.26.0
 termcolor==1.1.0
 terminado==0.15.0
+texcaller==0
 text-unidecode==1.3
 textblob==0.17.1
 textual==0.1.15
@@ -481,9 +484,9 @@ tldextract==3.3.0
 toml==0.10.2
 tomli==2.0.1
 toolz==0.11.2
-torch==1.13.1
-torchaudio==0.13.1
-torchvision
+torch==1.11.0+cpu
+torchaudio==0.11.0+rocm4.5.2
+torchvision==0.12.0+cpu
 tornado==6.2
 tqdm==4.62.3
 traitlets==5.3.0
