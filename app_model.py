@@ -28,7 +28,7 @@ def hello(): # Ligado al endopoint "/" o sea el home, con el método GET
            "</style>" \
            "<h1><b>Enhorabuena, ha sido un placer teneros como alumnos, he aprendido mucho y espero que os sirva, más en lo humano que en lo técnico, pero de primeras en lo técnico. Y es la primera vez que lo escribo.<b><br></h1>" \
            "<br>" \
-           "<h1>Puedes elegir entre las siguientes variables, poniendo en la barra de direccion las variables(COL) en el orden establecido separadas de la forma siguiente:</h1>" \
+           "<h1>Viva Andalucia libre, Cadiz es un pueblo de Jerez, te quiere í anda ya, pisha.... y un poco menos pero también Ecuador. Puedes elegir entre las siguientes variables, poniendo en la barra de direccion las variables(COL) en el orden establecido separadas de la forma siguiente:</h1>" \
            "<h4>eliges /api/v1/predict o /api/v1/retrain + ?COL=VAL#...COL=VAL#...COL=VAL</h4>" \
             "<br>" \
             "<h2>Por ejemplo:  /api/v1/predict?work_year=5&experience_level=Senior&employment_type=Full-time&job_title=Software%20Engineer&salary_currency=USD&salary_in_usd=50000&employee_residence=USA&remote_ratio=0.5&company_location=USA&company_size=100-500</h2>" \
